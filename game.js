@@ -19,8 +19,6 @@ function getHumanChoice() {
     return choice;
 }
 
-// let msg = getHumanChoice();
-// console.log(msg);
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
@@ -60,11 +58,6 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-
-// const humanSelection = getHumanChoice();
-// const computerSelection = getComputerChoice();
-
-// playRound(humanSelection, computerSelection);
 
 function playGame() {
     let counter = 0;
