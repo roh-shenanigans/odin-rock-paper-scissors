@@ -1,5 +1,5 @@
-humanScore = 0;
-computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
@@ -12,3 +12,12 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
+
+function getHumanChoice() {
+    let choice = prompt("Choose your move (rock/paper/scissors)");
+    return choice;
+}
+
+// let msg = getHumanChoice();
+// console.log(msg);
