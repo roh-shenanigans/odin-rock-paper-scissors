@@ -71,9 +71,9 @@ function playRound(event) {
 
 function displayResults() {
     console.log("Game over!");
-    const winner = (humanScore > computerScore) ? "You" : "Computer";
+    const result = (humanScore > computerScore) ? "You win!" : "Computer wins!";
     let results = document.querySelector("#results");
-    results.textContent = `Game over! ${winner} wins!`;
+    results.textContent = `Game over! ${result}`;
 
     rockBtn.removeEventListener("click", playRound);
     paperBtn.removeEventListener("click", playRound);
