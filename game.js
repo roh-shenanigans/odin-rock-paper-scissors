@@ -28,11 +28,6 @@ function playRound(event) {
 
     let roundResult = document.querySelector("#round-result");
 
-    if (humanScore == 5 || computerScore == 5) {
-        displayResults();
-        return;
-    }
-
     if (humanChoice == computerChoice) {
         console.log("Draw!");
         roundResult.textContent = "This round was a draw";
@@ -44,10 +39,13 @@ function playRound(event) {
             console.log("You win!");
             roundResult.textContent = "You won this round";
             humanScore += 1;
+            updateScore();
+
         } else if (humanChoice == "scissors") {
             console.log("Computer wins!");
             roundResult.textContent = "The computer won this round";
             computerScore += 1;
+            updateScore();
         }
 
     } else if (computerChoice == "paper") {
@@ -55,10 +53,13 @@ function playRound(event) {
             console.log("Computer wins!");
             roundResult.textContent = "The computer won this round";
             computerScore += 1;
+            updateScore();
+
         } else if (humanChoice == "scissors") {
             console.log("You win!");
             roundResult.textContent = "You won this round";
             humanScore += 1;
+            updateScore();
         }
     }
 
@@ -67,14 +68,21 @@ function playRound(event) {
             console.log("You win!");
             roundResult.textContent = "You won this round";
             humanScore += 1;
+            updateScore();
+
         } else if (humanChoice == "paper") {
             console.log("Computer wins!");
             roundResult.textContent = "The computer won this round";
             computerScore += 1;
+            updateScore();
         }
     }
 
-    updateScore();
+    if (humanScore == 5 || computerScore == 5) {
+        displayResults();
+        return;
+    }
+
 }
 
 function displayResults() {
@@ -103,6 +111,7 @@ function displayResults() {
 }
 
 function updateScore() {
+
     const scoreCard = document.querySelector("#score");
     scoreCard.textContent = `You: ${humanScore}  |  Computer: ${computerScore}`;
 }
