@@ -61,10 +61,17 @@ button {
     text-align: center;
     background-color: white;
     border: none;
+    border-radius: 15px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
 button:hover {
     cursor: pointer;
+    background-color: aliceblue;
+}
+
+button:active {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .desc {
@@ -79,4 +86,5 @@ button:hover {
     font-size: 34px;
     font-weight: 600px;
     padding: 20px;
+    border-radius: 8px;
 }
