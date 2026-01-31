@@ -22,15 +22,6 @@ function getComputerChoice() {
     }
 }
 
-/*
-function getHumanChoice(event) {
-    // let choice = prompt("Choose your move (rock/paper/scissors)");
-    // return choice;
-    console.log(event.target.getAttribute("id"));
-    return event.target.getAttribute("id");
-}
-*/
-
 function playRound(event) {
     const humanChoice = event.target.getAttribute("id");
     const computerChoice = getComputerChoice();
