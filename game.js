@@ -26,8 +26,7 @@ function playRound(event) {
     const humanChoice = event.target.getAttribute("id");
     const computerChoice = getComputerChoice();
 
-    // const scoreCard = document.querySelector("#score");
-    updateScore();
+    let roundResult = document.querySelector("#round-result");
 
     if (humanScore == 5 || computerScore == 5) {
         displayResults();
@@ -36,24 +35,29 @@ function playRound(event) {
 
     if (humanChoice == computerChoice) {
         console.log("Draw!");
+        roundResult.textContent = "This round was a draw";
         return;
     }
 
     if (computerChoice == "rock") {
         if (humanChoice == "paper") {
             console.log("You win!");
+            roundResult.textContent = "You won this round";
             humanScore += 1;
         } else if (humanChoice == "scissors") {
             console.log("Computer wins!");
+            roundResult.textContent = "The computer won this round";
             computerScore += 1;
         }
 
     } else if (computerChoice == "paper") {
         if (humanChoice == "rock") {
             console.log("Computer wins!");
+            roundResult.textContent = "The computer won this round";
             computerScore += 1;
         } else if (humanChoice == "scissors") {
             console.log("You win!");
+            roundResult.textContent = "You won this round";
             humanScore += 1;
         }
     }
@@ -61,16 +65,24 @@ function playRound(event) {
     else if (computerChoice == "scissors") {
         if (humanChoice == "rock") {
             console.log("You win!");
+            roundResult.textContent = "You won this round";
             humanScore += 1;
         } else if (humanChoice == "paper") {
             console.log("Computer wins!");
+            roundResult.textContent = "The computer won this round";
             computerScore += 1;
         }
     }
+
+    updateScore();
 }
 
 function displayResults() {
     console.log("Game over!");
+
+    let roundResult = document.querySelector("#round-result");
+    roundResult.textContent = "";
+
     const result = (humanScore > computerScore) ? "You win!" : "Computer wins!";
     let results = document.querySelector("#results");
     results.textContent = `Game over! ${result}`;
