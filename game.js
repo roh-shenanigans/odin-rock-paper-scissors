@@ -39,16 +39,7 @@ function playRound(event) {
     updateScore();
 
     if (humanScore == 5 || computerScore == 5) {
-        console.log("Game over!");
         displayResults();
-        // console.log(`You: ${humanScore}  |  Computer: ${computerScore}`);
-
-        // scoreCard.textContent = `You: ${humanScore}  |  Computer: ${computerScore}`;
-
-        rockBtn.removeEventListener("click", playRound);
-        paperBtn.removeEventListener("click", playRound);
-        scissorsBtn.removeEventListener("click", playRound);
-
         return;
     }
 
@@ -88,7 +79,14 @@ function playRound(event) {
 }
 
 function displayResults() {
+    console.log("Game over!");
+    const winner = (humanScore > computerScore) ? "You" : "Computer";
+    let results = document.querySelector("#results");
+    results.textContent = `Game over! ${winner} wins!`;
 
+    rockBtn.removeEventListener("click", playRound);
+    paperBtn.removeEventListener("click", playRound);
+    scissorsBtn.removeEventListener("click", playRound);
 }
 
 function updateScore() {
