@@ -74,7 +74,15 @@ function displayResults() {
     const result = (humanScore > computerScore) ? "You win!" : "Computer wins!";
     let results = document.querySelector("#results");
     results.textContent = `Game over! ${result}`;
-    results.style.backgroundColor = "aliceblue";
+
+    if (result === "You win!") {
+        results.style.backgroundColor = "lime";
+        results.style.color = "white";
+    } else {
+        results.style.backgroundColor = "red";
+        results.style.color = "white";
+    }
+
     results.style.boxShadow = "rgba(0, 0, 0, 0.24) 0px 3px 8px";
 
     rockBtn.removeEventListener("click", playRound);
