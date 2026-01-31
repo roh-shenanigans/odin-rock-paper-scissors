@@ -74,6 +74,7 @@ function displayResults() {
     const result = (humanScore > computerScore) ? "You win!" : "Computer wins!";
     let results = document.querySelector("#results");
     results.textContent = `Game over! ${result}`;
+    results.style.backgroundColor = "aliceblue";
 
     rockBtn.removeEventListener("click", playRound);
     paperBtn.removeEventListener("click", playRound);
