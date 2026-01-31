@@ -93,27 +93,3 @@ function updateScore() {
     const scoreCard = document.querySelector("#score");
     scoreCard.textContent = `You: ${humanScore}  |  Computer: ${computerScore}`;
 }
-
-function playGame() {
-    let counter = 0;
-
-    while (counter < 5) {
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-
-        console.log(`Round ${counter + 1}: `)
-        playRound(humanSelection, computerSelection);
-        counter += 1;
-    }
-
-    if (humanScore > computerScore) {
-        console.log("You win the overall game!");
-        alert("You win the overall game!");
-    } else if (computerScore > humanScore) {
-        console.log("Computer wins the overall game!");
-        alert("Computer wins the overall game!");
-    } else {
-        console.log("It is a draw!");
-        alert("It is a draw!");
-    }
-}
