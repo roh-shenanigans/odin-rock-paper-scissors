@@ -75,6 +75,7 @@ function displayResults() {
     let results = document.querySelector("#results");
     results.textContent = `Game over! ${result}`;
     results.style.backgroundColor = "aliceblue";
+    results.style.boxShadow = "rgba(0, 0, 0, 0.24) 0px 3px 8px";
 
     rockBtn.removeEventListener("click", playRound);
     paperBtn.removeEventListener("click", playRound);
